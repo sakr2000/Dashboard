@@ -1,6 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
+}
+body {
+  background-color: #f9f5f3;
+  height: 100dvh;
+  overflow-y: hidden;
+}
+.small-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ff7f5c;
+  border-radius: 10px;
 }

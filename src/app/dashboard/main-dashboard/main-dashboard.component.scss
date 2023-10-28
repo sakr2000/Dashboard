@@ -1,0 +1,316 @@
+.header {
+  height: 15dvh;
+  padding-left: 60px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  .indecators {
+    display: flex;
+    .indecator {
+      width: 200px;
+      display: flex;
+      gap: 5px;
+      align-items: flex-end;
+      font-family: Roboto;
+      .number {
+        color: #3d5161;
+        font-size: 32px;
+      }
+      .title {
+        font-size: 13px;
+        width: min-content;
+      }
+      svg {
+        margin-left: 5px;
+        width: 40px;
+        .a {
+          fill: #3d5161;
+          stroke: #3d5161;
+          stroke-width: 0.6px;
+        }
+      }
+    }
+  }
+
+  .filters {
+    font-family: Montserrat;
+    background-color: #f9f5f3;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    span {
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 25px;
+      width: max-content;
+      border-radius: inherit;
+      color: #3d5161;
+      font-size: 14px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+    span.active {
+      cursor: auto;
+      color: #fff;
+      background-color: #ff7f5c;
+    }
+  }
+  .date-picker {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    .triangle {
+      transform: rotate(90deg);
+    }
+    .date {
+      font-family: Roboto;
+      font-size: 13px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #3d5161;
+      color: #3d5161;
+      label {
+        position: absolute;
+        user-select: none;
+        cursor: text;
+        top: 30%;
+        transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3 ease-in-out;
+      }
+      input {
+        border: none;
+        background-color: #fff;
+        padding: 10px;
+        height: 100%;
+        width: 90%;
+        &:focus ~ label {
+          top: -25%;
+          font-size: 10px;
+        }
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+        stroke-width: 5px;
+        stroke: #2c3e50;
+        fill: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.triangle {
+  width: 18px;
+  height: 12px;
+  background-color: #ff7f5c;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.square {
+  width: 14px;
+  height: 14px;
+  background-color: #ff7f5c;
+}
+
+.container {
+  margin: 15px 0 0 80px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  .col-1 {
+    .cards {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 5px 10px;
+      .card {
+        width: 20%;
+        background-color: #fff;
+        color: #3d5161;
+        border-radius: 24px;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: 0.2s;
+        gap: 5px;
+        .value {
+          font-family: Roboto;
+          font-size: 20px;
+          .number {
+            font-size: 35px;
+            padding: 10px;
+          }
+        }
+        p {
+          font-size: 15px;
+          width: 80%;
+          font-family: Montserrat;
+          font-weight: 700;
+
+          text-transform: capitalize;
+        }
+        .difference {
+          margin-top: 10px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+        .difference.down {
+          color: #ff7f5c;
+          .triangle {
+            rotate: 180deg;
+          }
+        }
+        .difference.up {
+          color: #00cbc0;
+          .triangle {
+            background-color: #00cbc0;
+          }
+        }
+        &:hover {
+          background-color: #f4dbd4;
+        }
+      }
+    }
+    .filters-box {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 30px 10px;
+      .filters {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 30px;
+        span {
+          cursor: pointer;
+          user-select: none;
+          padding: 10px 25px;
+          width: max-content;
+          border-radius: inherit;
+          color: #3d5161;
+          font-size: 14px;
+          letter-spacing: 1.4px;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          svg {
+            width: 15px;
+            height: 15px;
+            fill: none;
+            stroke: #3d5161;
+            stroke-width: 2px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+        }
+        span.active {
+          cursor: auto;
+          color: #fff;
+          background-color: #ff7f5c;
+          svg {
+            stroke: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .col-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .hourly-sales {
+      width: 70%;
+      margin: 10px 0 20px 0;
+      h3 {
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 700;
+        color: #3d5161;
+        margin-bottom: 20px;
+      }
+      .chart {
+        width: 100%;
+      }
+    }
+    .station-sales {
+      width: 85%;
+      h3 {
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 700;
+        color: #3d5161;
+        margin-bottom: 20px;
+      }
+      .stations {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: #3d5161;
+        .box {
+          svg {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            .a {
+              fill: #3d5161;
+              stroke: #3d5161;
+              stroke-width: 0.6px;
+            }
+          }
+          .station-details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span {
+              font-size: 18px;
+              font-weight: 700;
+            }
+            .title {
+              font-size: 16px;
+              flex-grow: 1;
+            }
+          }
+          .progress-bar {
+            width: 100%;
+            height: 4px;
+            margin: 10px auto;
+            background-color: #f4dbd4;
+            border-radius: 5px;
+            span {
+              display: block;
+              width: 40%;
+              height: 100%;
+              background-color: #ff7f5c;
+              border-radius: inherit;
+            }
+          }
+        }
+        .box.inactive {
+          .station-details {
+            .number {
+              color: #b9cde2;
+            }
+          }
+          .progress-bar {
+            background-color: #b9cde2;
+            span {
+              width: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+sup {
+  font-size: 0.6em;
+}
