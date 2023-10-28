@@ -24,6 +24,9 @@
       stroke-linejoin: round;
       stroke-width: 3.5px;
     }
+    &:hover .b {
+      stroke: #fff;
+    }
   }
   .logo {
     svg {
